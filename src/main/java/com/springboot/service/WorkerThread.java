@@ -1,6 +1,6 @@
-package com;
+package com.springboot.service;
 
-import java.lang.Thread;
+import com.springboot.entity.Task;
 
 public class WorkerThread extends Thread {
     private TaskQueue taskQueue;
@@ -18,8 +18,7 @@ public class WorkerThread extends Thread {
                 if (task != null) {
                     task.getExecutionInstructions().run();
                 } else {
-                    // If no task available, sleep for a short duration to avoid busy waiting
-                    Thread.sleep(100); // Sleep for 100 milliseconds
+                    Thread.sleep(100);
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();

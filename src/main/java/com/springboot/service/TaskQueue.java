@@ -1,9 +1,12 @@
-package com;
+package com.springboot.service;
 
 import java.util.*;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import com.springboot.entity.Task;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TaskQueue {
     private PriorityQueue<Task> queue;
     private Lock lock; 
